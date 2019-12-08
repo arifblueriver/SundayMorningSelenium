@@ -54,6 +54,7 @@ public class TestngAnnotation {
 	}
 	@Test
 	public void getsalary() {
-		System.out.println("This is Test");
+		System.out.println("This is Test one");
 	}
+	
 }

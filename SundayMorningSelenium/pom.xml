@@ -64,7 +64,7 @@
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>GCRLogin_testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 
