@@ -13,9 +13,9 @@ public class ObjectMap {
 		Properties propeties = new Properties();// to read notepad
 
 		propeties.load(fis);// properties & serilization connect together
-		propeties.getProperty(object);		
+	String value=	propeties.getProperty(object);		
 		
-		return propeties.getProperty(object);
+		return value;
 
 	}
 

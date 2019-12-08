@@ -30,7 +30,7 @@ public static String captureScreenShot(WebDriver driver, String ScreenShotName) 
 			e.printStackTrace();
 		}
 		
-		System.out.println("Screen shot taken");
+		//System.out.println("Screen shot taken");
 		
 		return destination;
 	
