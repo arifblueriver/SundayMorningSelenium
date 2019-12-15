@@ -1,6 +1,6 @@
 package com.practice;
 
-public class Student {
+public class JavaIfElseCondition {
 	
 	
 static int a;

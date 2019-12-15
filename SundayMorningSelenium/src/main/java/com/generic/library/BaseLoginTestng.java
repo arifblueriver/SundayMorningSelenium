@@ -1,11 +1,14 @@
 package com.generic.library;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
@@ -34,7 +37,7 @@ public class BaseLoginTestng extends ExtentReport {
 	}
 
 	@Test
-	public void login() throws Throwable {
+	public void loginGCR() throws Throwable {
 
 		ObjectMap obj = new ObjectMap();
 
@@ -51,10 +54,51 @@ public class BaseLoginTestng extends ExtentReport {
 		HighLighter.color(driver, pf.getPassword());
 		pf.getPassword().submit();
 
-		// TakeScreenShot.captureScreenShot(driver, "GCRSHOP login page");
-
-		// long id = Thread.currentThread().getId();
-		// System.out.println("Sample test-method One. Thread id is: " + id);
+		
+	}
+	
+	@Test
+	public void WebTable() {
+		
+		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+		driver = new ChromeDriver();// upcasting
+		driver.manage().window().maximize();
+		driver.get("http://money.rediff.com/gainers/bsc/dailygroupa?");
+		
+		
+		
+		
+		  // Header print 
+		WebElement allHeadersOfTable =driver.findElement(By.xpath("//table//thead"));
+		  System.out.println("Headers in table are below:"); 
+		  System.out.println("Header of Table::"+allHeadersOfTable.getText());
+		
+		  // No.of rows 
+		  List<WebElement> rows = driver.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr")); 
+		  System.out.println("No of rows are : " + rows.size());
+		  
+		
+		  // 1st row 
+		  WebElement firstRow = driver .findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr[1]"));
+		
+		  System.out.println("1st row::"+firstRow.getText());
+		  
+		// Last row 
+		  WebElement lastRow = driver .findElement(By.xpath("//table/tbody/tr["+rows.size()+"]"));
+		
+		  System.out.println("Last row::"+lastRow.getText());
+		 
+		  System.out.println("Below my whole table::");
+		 
+		  for(int i =0;i<= rows.size() ;i++) {
+			  
+			  
+			  System.out.println(rows.get(i).getText());
+			  
+			  //code
+		  }
+		  
+		
 	}
 
 	@AfterTest
