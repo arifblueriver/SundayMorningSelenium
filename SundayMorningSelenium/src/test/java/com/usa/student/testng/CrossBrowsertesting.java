@@ -34,7 +34,7 @@ public class CrossBrowsertesting {
 		
 		else{
 			//If no browser passed throw exception
-			throw new Exception("Browser is not correct");
+			throw new Exception("No driver found");
 		}
 		
 		driver.manage().window().maximize();
